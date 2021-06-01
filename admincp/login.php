@@ -16,7 +16,7 @@
             
         }
         $sql_user ="SELECT* FROM tbl_user WHERE username='".$user_name."' AND password='".$pass_worduser."'  LIMIT 1";
-        $rowuser=pg_query($mysqli,$sql_user);
+        $rowuser=pg_query($db,$sql_user);
         $countuser=pg_num_rows($rowuser);
         $user_rows=pg_fetch_array($rowuser);
         if($countuser>0){
