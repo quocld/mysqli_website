@@ -6,7 +6,7 @@
         $pass_word= md5($_POST['psw']);
         $pass_worduser=$_POST['psw'];
         $sql ="SELECT* FROM tbl_admin WHERE username='".$user_name."' AND password='".$pass_word."'  LIMIT 1";
-        $row=pg_query($mysqli,$sql);
+        $row=pg_query($db,$sql);
         $count = pg_num_rows($row);
         $admin_rows=pg_fetch_array($row);
         if($count>0){
