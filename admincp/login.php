@@ -6,9 +6,9 @@
         $pass_word= md5($_POST['psw']);
         $pass_worduser=$_POST['psw'];
         $sql ="SELECT* FROM tbl_admin WHERE username='".$user_name."' AND password='".$pass_word."'  LIMIT 1";
-        $row=mysqli_query($mysqli,$sql);
-        $count = mysqli_num_rows($row);
-        $admin_rows=mysqli_fetch_array($row);
+        $row=pg_query($mysqli,$sql);
+        $count = pg_num_rows($row);
+        $admin_rows=pg_fetch_array($row);
         if($count>0){
             $_SESSION['dangnhap']=$user_name;
             $_SESSION['id_user']=$admin_rows['id_admin'];
@@ -16,9 +16,9 @@
             
         }
         $sql_user ="SELECT* FROM tbl_user WHERE username='".$user_name."' AND password='".$pass_worduser."'  LIMIT 1";
-        $rowuser=mysqli_query($mysqli,$sql_user);
-        $countuser=mysqli_num_rows($rowuser);
-        $user_rows=mysqli_fetch_array($rowuser);
+        $rowuser=pg_query($mysqli,$sql_user);
+        $countuser=pg_num_rows($rowuser);
+        $user_rows=pg_fetch_array($rowuser);
         if($countuser>0){
           $_SESSION['dangnhap']=$user_name;
           $_SESSION['id_user']=$user_rows['id_user'];
