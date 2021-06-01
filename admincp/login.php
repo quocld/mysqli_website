@@ -3,7 +3,7 @@
     include('config/config.php');
     if(isset($_POST['loginbut'])){
         $user_name=$_POST['username'];
-        $pass_word= md5($_POST['psw']);
+        $pass_word=$_POST['psw'];
         $pass_worduser=$_POST['psw'];
         $sql ="SELECT* FROM tbl_admin WHERE username='".$user_name."' AND password='".$pass_word."'  LIMIT 1";
         $row=pg_query($db,$sql);
