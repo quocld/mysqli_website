@@ -58,7 +58,7 @@ session_start();
                     }
                     $sql_menuavt="SELECT*FROM tbl_profile WHERE username='".$_SESSION['dangnhap']."' LIMIT 1  ";
                     $query_menuavt=pg_query($db,$sql_menuavt);
-                    $avtmenu=mysqli_fetch_array($query_menuavt);
+                    $avtmenu=pg_fetch_array($query_menuavt);
                     ?>
                     </a></li>
                     <?php
