@@ -1,0 +1,176 @@
+html{
+    background-image: url("../images/backweb.png");
+}
+body{
+    margin: 0px;
+    padding: 0px;
+}
+.wrapper{
+    
+    height: auto;
+    width: 100%;
+    margin: auto;
+
+}
+
+.header{
+    
+    height: 100px;
+    width: 100%;
+}
+.menu{
+    border: 1px solid #ffff;
+    height: 120px;
+    width: 100%;
+    background:rgb(255, 255, 255);
+}
+img.logomenu {
+    height: 50px;
+    float: left;
+    margin-left: 45px;
+}
+.menubar {
+    margin-left: 29%;
+    margin-top: 46px;
+}
+ul#menu li {
+     list-style-type: none;    
+     float: left;    
+     margin-right: 10px;   
+     
+}
+ul#menu li a {
+text-decoration: none;
+background-color: rgb(255, 255, 255);
+padding: 5px;
+color:  rgb(151,154,158);
+font-family: 'Quicksand', sans-serif;
+padding: 7px;
+font-weight: bold; 
+font-size: 18px;
+}
+ul#menu li a:hover{
+    border-bottom: 2px solid rgb(79,154,234);
+    color: rgb(74,80,87) ;
+}
+ul#menu li {
+orientation: relative;
+}
+ul#menu li ul#sub {
+display: none;
+position: absolute;
+width: 100px;
+}
+ul#menu li ul#sub li {
+margin-top: 10px;
+margin-bottom: 5px;
+}
+ul#menu li:hover ul#sub {
+display: block;
+}
+.main {
+    border: 1px solid white;
+    height: auto;
+    width: 100%;
+    background: rgb(255, 255, 255);
+    margin-top: 3px;
+    display: inline-block;
+    padding: 5%;
+    margin-bottom: 3px;
+}
+
+.maincontent {
+    background:rgb(255, 255, 255);
+    border: 1px solid #ffff;
+    width: 99%;
+    margin: 5px;
+    
+    height: 900px;
+    padding: auto;
+}
+.content_main {
+    margin-left: 3%;
+}
+ul.product_list {
+    padding: 0px;
+    margin: 0px;
+    list-style: none;
+    width: 100%;
+    
+    
+}
+ul.product_list li {  
+    float: left;
+    text-align: center;
+    border: 2px solid rgb(158, 174, 190);
+    width: 19%;
+    margin-left: 4%;
+    height: 421px;
+    margin-bottom: 46px;
+}
+ul.product_list li:hover{
+    border: 2px solid rgb(71, 101, 136);
+
+}
+ul.product_list li img {
+    width: 100%;
+}
+p.product_name {
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+    color: black;
+    font-weight: bold;
+}
+p.product_cost {
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+    color: black;
+}
+
+.footer{
+    background: url('../images/backweb.png');
+    height: 400px;
+    width: 100%;
+    text-align: center;
+    color:#ffff;
+}
+.clear{
+    clear: both;
+}
+::before {
+    font-size: 53px;
+    color: rgb(79,154,234);
+    margin-left: 72%;
+    float:left;
+}
+span.logomenu {
+    color: rgb(79,154,234);
+    font-family: 'Quicksand',sans-serif;
+    margin-left: 3%;
+    font-size: 23px;
+    font-weight: bold;
+    float: left;
+    margin-top: 17px;
+}
+input[type="search"] {
+    width: 165%;
+    height: 36px;
+    margin-top: -20px;
+    margin-left: -73%;
+    border-bottom-right-radius: 18px;
+    border-bottom-left-radius: 18px;
+    border-top-right-radius: 18px;
+    border-top-left-radius: 18px;
+    border: 2px solid rgb(74,80,87);
+}
+input[type="search"]:hover {
+    
+    border: 2px solid rgb(79,154,234);
+}
+span#spanlogo {
+    padding-inline: 7%;
+}
+ul.product_list li img {
+    width: 90%;
+    margin-top: 20px;
+}

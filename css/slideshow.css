@@ -1,0 +1,42 @@
+nav{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Verdana', sans-serif;
+  }
+  
+  body {
+    background: url('Big-Sur-Mountains.png');
+    background-size: cover;
+    
+  }
+  .container{
+    width: max-content;
+    margin: 0 auto;
+    padding: 5px;
+    
+    display: flex;
+    justify-content: top;
+    align-items: top;
+    font-size: 20px;
+    line-height: 40px;
+    height: 40px;
+   
+  }
+  
+  .dropdownbutton{
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background-color: #ffff;
+    color: #1e244b;
+    padding: 15px 30px;
+    margin: 10px 0;
+    font-size: 0.9em;
+    cursor: pointer;
+    border: none;
+
+    
+  }
