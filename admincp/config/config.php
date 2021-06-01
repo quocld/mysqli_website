@@ -9,7 +9,5 @@ $db = pg_connect($conn_string);
 //connect to a database named "test" on the host "sheep" with a username and password
    if(!$db) {
       echo "Error : Unable to open database\n";
-   } else {
-      echo "Opened database successfully\n";
    }
 ?>
