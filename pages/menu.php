@@ -7,7 +7,7 @@ session_start();
     ?>
 <?php
     $sql_danhmuc="SELECT*FROM tbl_category ORDER BY id_category DESC";
-    $query_danhmuc=mysqli_query($mysqli,$sql_danhmuc);
+    $query_danhmuc=pg_query($db,$sql_danhmuc);
 ?>
 <style>
       img.avtmenu {
@@ -30,7 +30,7 @@ session_start();
                     <li><a href="index.php?quanly=sanphamnoibat">Category</a></li>
                     <ul id="sub">             
                     <?php
-                    while($row_danhmuc= mysqli_fetch_array($query_danhmuc)){
+                    while($row_danhmuc= pg_fetch_array($query_danhmuc)){
                     ?>
                     <li><a href="index.php?quanly=danhmucsanpham&id=<?php echo $row_danhmuc['id_category']; ?>"><?php echo $row_danhmuc['danhmuc']; ?></a></li>
                     <?php
@@ -57,7 +57,7 @@ session_start();
                         echo $_SESSION['dangnhap'];
                     }
                     $sql_menuavt="SELECT*FROM tbl_profile WHERE username='".$_SESSION['dangnhap']."' LIMIT 1  ";
-                    $query_menuavt=mysqli_query($mysqli,$sql_menuavt);
+                    $query_menuavt=pg_query($db,$sql_menuavt);
                     $avtmenu=mysqli_fetch_array($query_menuavt);
                     ?>
                     </a></li>
@@ -75,8 +75,8 @@ session_start();
                     ?>
 
                     <?php  }else{ ?>
-                    <li class="loginbut"><a href="http://localhost:8080/web_mysqli/admincp/login.php/">Login</a></li>
-                    <li class="loginbut"><a href="http://localhost:8080/web_mysqli/admincp/signup.php/">Sign Up</a></li>
+                    <li class="loginbut"><a href="admincp/login.php/">Login</a></li>
+                    <li class="loginbut"><a href="admincp/signup.php/">Sign Up</a></li>
                     <?php } ?>
                 </ul>
             </div>
