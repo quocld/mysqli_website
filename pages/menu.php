@@ -48,6 +48,7 @@ session_start();
                     <li><a href="index.php?quanly=giohang">Cart</a></li>
                     <?php
                         if(isset($_SESSION['dangnhap'])){
+                        //da dang nhap 
                     ?>
                     <li class="loginbut"><a href="index.php?quanly=logout">Logout</a></li>
                     <li class="loginbut"><a href="pages/profile/profile.php">
@@ -56,12 +57,12 @@ session_start();
                     if(isset($_SESSION['dangnhap'])){
                         echo $_SESSION['dangnhap'];
                     }
-                    $sql_menuavt="SELECT*FROM tbl_profile WHERE username='".$_SESSION['dangnhap']."' LIMIT 1  ";
-                    $query_menuavt=pg_query($db,$sql_menuavt);
-                    $avtmenu=pg_fetch_array($query_menuavt);
                     ?>
                     </a></li>
                     <?php
+                    $sql_menuavt="SELECT*FROM tbl_profile WHERE username='".$_SESSION['dangnhap']."' LIMIT 1  ";
+                    $query_menuavt=pg_query($db,$sql_menuavt);
+                    $avtmenu=pg_fetch_array($query_menuavt);
                     if(isset($avtmenu['anhdaidien'])){
                     ?>
                     <img class="avtmenu" src="pages/profile/avatar/<?php echo $avtmenu['anhdaidien'] ?>" >
@@ -77,7 +78,9 @@ session_start();
                     <?php  }else{ ?>
                     <li class="loginbut"><a href="admincp/login.php/">Login</a></li>
                     <li class="loginbut"><a href="admincp/signup.php/">Sign Up</a></li>
-                    <?php } ?>
+                    <?php } 
+                    ?>
+                    
                 </ul>
             </div>
         </div>
