@@ -3,8 +3,8 @@ include("../../admincp/config/config.php");
 $id_sanpham=$_GET['idproduct'];
 
 $sql_sanpham="SELECT*FROM tbl_sanpham WHERE id_sanpham='".$id_sanpham."' LIMIT 1";
-$query_sanpham=mysqli_query($mysqli,$sql_sanpham);
-$row_sanpham=mysqli_fetch_array($query_sanpham);
+$query_sanpham=pg_query($db,$sql_sanpham);
+$row_sanpham=pg_fetch_array($query_sanpham);
 ?>
 <!DOCTYPE html>
 <html lang="en">
