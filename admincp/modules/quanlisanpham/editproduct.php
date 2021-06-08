@@ -1,6 +1,6 @@
 <?php
     $sql_editproduct="SELECT*FROM tbl_sanpham WHERE id_sanpham='$_GET[idproduct]' LIMIT 1 ";
-    $query_editproduct= mysqli_query($mysqli,$sql_editproduct);
+    $query_editproduct= pg_query($db,$sql_editproduct);
 ?>
 
 <h1>EDIT PRODUCT</h1>
@@ -8,7 +8,7 @@
     <form method="POST" action="modules/quanlisanpham/xuly.php?idproduct=<?php echo $_GET['idproduct'] ?>" enctype="multipart/form-data">
         
         <?php
-            while($dong= mysqli_fetch_array($query_editproduct)){
+            while($dong= pg_fetch_array($query_editproduct)){
         ?>
         <tr>
             <td>Product name</td>
@@ -46,8 +46,8 @@
                 <select name ="danhmuc">
                     <?php
                     $sql_danhmuc="SELECT*FROM tbl_category ORDER BY id_category DESC";
-                    $query_danhmuc=mysqli_query($mysqli,$sql_danhmuc);
-                    while($row_danhmuc=mysqli_fetch_array($query_danhmuc)){
+                    $query_danhmuc=pg_query($db,$sql_danhmuc);
+                    while($row_danhmuc=pg_fetch_array($query_danhmuc)){
                     ?>
                     <option value="<?php echo $row_danhmuc['id_category'] ?>"><?php echo $row_danhmuc['danhmuc'] ?></option>
                     
