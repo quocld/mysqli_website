@@ -14,7 +14,7 @@
     $danhmuc=$_POST['danhmuc'];
 if(isset($_POST['themsanpham'])){
     //them
-    $sql_them="INSERT INTO tbl_sanpham(tensp,masp,giasp,hinhanh,tomtat,soluong,noidung,tinhtrang,id_category) VALUE('".$tensanpham."','".$masp."','".$giasp."','".$hinhanh."','".$tomtat."','".$soluong."','".$noidung."','".$tinhtrang."','".$danhmuc."')";
+    $sql_them="INSERT INTO tbl_sanpham(tensp,masp,giasp,hinhanh,tomtat,soluong,noidung,tinhtrang,id_category) VALUES('".$tensanpham."','".$masp."','".$giasp."','".$hinhanh."','".$tomtat."','".$soluong."','".$noidung."','".$tinhtrang."','".$danhmuc."')";
     pg_query($db,$sql_them);
     move_uploaded_file($hinhanh_tmp,'tailen/'.$hinhanh);
     header("location: ../../index.php?action=managerproductcategory&query=insert");
