@@ -51,8 +51,8 @@
                 <select name ="danhmuc">
                     <?php
                     $sql_danhmuc="SELECT*FROM tbl_category ORDER BY id_category DESC";
-                    $query_danhmuc=mysqli_query($mysqli,$sql_danhmuc);
-                    while($row_danhmuc=mysqli_fetch_array($query_danhmuc)){
+                    $query_danhmuc=pg_query($db,$sql_danhmuc);
+                    while($row_danhmuc=pg_fetch_array($query_danhmuc)){
                     ?>
                     <option value="<?php echo $row_danhmuc['id_category'] ?>"><?php echo $row_danhmuc['danhmuc'] ?></option>
                     
