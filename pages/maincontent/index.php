@@ -4,13 +4,13 @@ if(isset($_GET['quanly']) && $_GET['quanly']=="sanphamnoibat"){
 ?>
 <?php
     $sql_productall="SELECT*FROM tbl_sanpham LIMIT 20";
-    $query_productall=mysqli_query($mysqli,$sql_productall);
+    $query_productall=pg_query($db,$sql_productall);
     
 ?>
 <p>Product category: </p>
                 <ul class=product_list>
                     <?php
-                    while($row_productall=mysqli_fetch_array($query_productall)){
+                    while($row_productall=pg_fetch_array($query_productall)){
                     ?>
                     <li>
                         <img src="admincp/modules/quanlisanpham/tailen/<?php echo $row_productall['hinhanh'] ?>">
@@ -38,13 +38,13 @@ if(isset($_GET['quanly']) && $_GET['quanly']=="sanphamnoibat"){
 
 <?php
     $sql_product="SELECT*FROM tbl_sanpham WHERE tbl_sanpham.id_category='$_GET[id]' ORDER BY tbl_sanpham.id_category DESC";
-    $query_product=mysqli_query($mysqli,$sql_product);
+    $query_product=pg_query($db,$sql_product);
     
 ?>
 <p>Product category: </p>
                 <ul class=product_list>
                     <?php
-                    while($row_product=mysqli_fetch_array($query_product)){
+                    while($row_product=pg_fetch_array($query_product)){
                     ?>
                     <li>
                         <img src="admincp/modules/quanlisanpham/tailen/<?php echo $row_product['hinhanh'] ?>">

@@ -50,8 +50,8 @@
         $id=$_GET['idproduct'];
         $soluong=1;
         $sql="SELECT*FROM tbl_sanpham WHERE id_sanpham='".$id."' LIMIT 1 ";
-        $query=mysqli_query($mysqli,$sql);
-        $row=mysqli_fetch_array($query);
+        $query=pg_query($db,$sql);
+        $row=pg_fetch_array($query);
         if($row){
             $new_product=array(array('id'=>$id,'tensp'=>$row['tensp'],'masp'=>$row['masp'],'soluong'=>$soluong,'giasp'=>$row['giasp'],'hinhanh'=>$row['hinhanh']));
             if(isset($_SESSION['cart'])){

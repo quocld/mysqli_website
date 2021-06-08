@@ -3,11 +3,11 @@
  include("../../admincp/config/config.php");
  if(isset($_SESSION['dangnhap'])){
      $sql="SELECT*FROM tbl_user WHERE username='".$_SESSION['dangnhap']."' LIMIT 1 ";
-     $sql_user=mysqli_query($mysqli,$sql);
-     $row_user=mysqli_fetch_array($sql_user);
+     $sql_user=pg_query($db,$sql);
+     $row_user=pg_fetch_array($sql_user);
      $sql_info="SELECT*FROM tbl_profile WHERE username='".$_SESSION['dangnhap']."' LIMIT 1 ";
-     $sql_user_info=mysqli_query($mysqli,$sql_info);
-     $row_user_info=mysqli_fetch_array($sql_user_info); 
+     $sql_user_info=pg_query($db,$sql_info);
+     $row_user_info=pg_fetch_array($sql_user_info); 
  }
  
 ?>
@@ -110,25 +110,25 @@ body{
     
         move_uploaded_file($avt_tmp,'avatar/'.$avt);
         $sql_update="SELECT*FROM tbl_user WHERE username='".$_SESSION['dangnhap']."' LIMIT 1";
-        $query_update=mysqli_query($mysqli,$sql_update); 
-        $row_update = mysqli_fetch_array($query_update);
+        $query_update=pg_query($db,$sql_update); 
+        $row_update = pg_fetch_array($query_update);
         $sql_update_info="SELECT*FROM tbl_profile WHERE username='".$_SESSION['dangnhap']."' LIMIT 1";
-        $query_update_info=mysqli_query($mysqli,$sql_update_info); 
-        $row_update_info = mysqli_fetch_array($query_update_info);
+        $query_update_info=pg_query($db,$sql_update_info); 
+        $row_update_info = pg_fetch_array($query_update_info);
         
         unlink('avatar/'.$row_update_info['anhdaidien']);
         $sql_edit="UPDATE tbl_user SET username='".$username."', phone='".$phone."', email='".$email."'  WHERE id_user='".$row_update['id_user']."'";
         $sql_edit2="UPDATE tbl_profile SET username='".$username."',anhdaidien='".$avt."', hovaten='".$fullname."'  WHERE id_profile='".$row_update_info['id_profile']."'";
         session_start();
         
-        mysqli_query($mysqli,$sql_edit);
-        mysqli_query($mysqli,$sql_edit2);
+        pg_query($db,$sql_edit);
+        pg_query($db,$sql_edit2);
         $_SESSION['dangnhap']=$username;
         header('Location:profile.php');
    }elseif(isset($_POST['insertbut'])){
         move_uploaded_file($avtnew_tmp,'avatar/'.$avtnew);
         $sql_insert="INSERT INTO tbl_profile(anhdaidien,username,hovaten) VALUE ('".$avtnew."','".$_SESSION['dangnhap']."','".$fullnamenew."')";
-        mysqli_query($mysqli,$sql_insert);
+        pg_query($db,$sql_insert);
         header('Location:profile.php');
 
    }
