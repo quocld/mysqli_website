@@ -1,6 +1,6 @@
 <?php
     $sql_danhsach="SELECT*FROM tbl_sanpham,tbl_category WHERE tbl_sanpham.id_category=tbl_category.id_category ORDER BY id_sanpham DESC ";
-    $query_danhsach= pg_query($db,$sql_danhsach);
+    $query_danhsach= mysqli_query($mysqli,$sql_danhsach);
 ?>
 <style>
     td {
@@ -28,7 +28,7 @@ td {
     </tr>
 <?php
     $i=0;
-    while($row = pg_fetch_array($query_danhsach)){
+    while($row = mysqli_fetch_array($query_danhsach)){
         $i++;
 ?>
     <tr>
