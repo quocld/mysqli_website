@@ -9,7 +9,7 @@
         $phone=$_POST['phone'];
         if($pass_word==$re_pass_word){
             $sql_signup ="INSERT INTO tbl_user(username, password, email, phone, adress ) VALUE('".$user_name."','".$pass_word."','".$email."','".$phone."','".$adress."')";
-            $row=mysqli_query($mysqli,$sql_signup);
+            $row=pg_query($db,$sql_signup);
             header("location:../login.php");
         }else{
           header("location:../sigup.php");
