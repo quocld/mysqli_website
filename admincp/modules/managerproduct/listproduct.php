@@ -1,6 +1,6 @@
 <?php
     $sql_listcategory="SELECT*FROM tbl_category ORDER BY id_category DESC ";
-    $query_listproduct= mysqli_query($mysqli,$sql_listcategory);
+    $query_listproduct= pg_query($db,$sql_listcategory);
 ?>
 <style>
     td {
@@ -22,7 +22,7 @@ td {
     </tr>
 <?php
     $i=0;
-    while($row = mysqli_fetch_array($query_listproduct)){
+    while($row = pg_fetch_array($query_listproduct)){
         $i++;
 ?>
     <tr>

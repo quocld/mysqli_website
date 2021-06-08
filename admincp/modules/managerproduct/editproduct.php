@@ -1,6 +1,6 @@
 <?php
     $sql_editproduct="SELECT*FROM tbl_category WHERE id_category='$_GET[idproduct]' LIMIT 1 ";
-    $query_editproduct= mysqli_query($mysqli,$sql_editproduct);
+    $query_editproduct= pg_query($db,$sql_editproduct);
 ?>
 
 <h1>EDIT PRODUCT</h1>
@@ -8,7 +8,7 @@
     <form method="POST" action="modules/managerproduct/handling.php?idproduct=<?php echo $_GET['idproduct'] ?>">
         
         <?php
-            while($dong= mysqli_fetch_array($query_editproduct)){
+            while($dong= pg_fetch_array($query_editproduct)){
         ?>
         <tr>
             <td>Category name</td>
