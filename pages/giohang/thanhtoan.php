@@ -8,14 +8,14 @@
             
             $id_khachhang = $_SESSION['id_user'];
             $code_order = rand(0,9999);
-            $insert_cart = "INSERT INTO tbl_cart (id_user,cart_code,cart_status) VALUE('".$id_khachhang."','".$code_order."',1)";
+            $insert_cart = "INSERT INTO tbl_cart (id_user,cart_code,cart_status) VALUES('".$id_khachhang."','".$code_order."',1)";
             $cart_query = pg_query($db,$insert_cart);
             if($cart_query){
                 //them gio hang chi tiet
                 foreach($_SESSION['cart'] as $key => $value){
                     $id_sanpham = $value['id'];
                     $soluong = $value['soluong'];
-                    $insert_order_details = "INSERT INTO tbl_detail(id_sanpham,soluong,cart_code) VALUE('".$id_sanpham."','".$soluong."','".$code_order."')";
+                    $insert_order_details = "INSERT INTO tbl_detail(id_sanpham,soluong,cart_code) VALUES('".$id_sanpham."','".$soluong."','".$code_order."')";
                     pg_query($db,$insert_order_details);
                 }
             }
