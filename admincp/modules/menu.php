@@ -1,8 +1,26 @@
-<ul class="admincp_list">
-	<li><a href="index.php?action=quanlydanhmucsanpham&query=them">Quản lý danh mục sản phẩm</a></li>
-	<li><a href="index.php?action=quanlysp&query=them">Quản lý sản phẩm</a></li>
-	<li><a href="index.php?action=quanlybaiviet&query=them">Quản lý bài viết</a></li>
-	<li><a href="index.php?action=quanlydanhmucbaiviet&query=them">Quản lý danh mục bài viết</a></li>
-	<li><a href="index.php?action=quanlydonhang&query=lietke">Quản lý đơn hàng</a></li>
+<?php
+    if(isset($_GET['action']) && $_GET['action']=="logout"){
+    unset($_SESSION['dangnhap']);
+    header("location:login.php/");
+    }
+    ?>
+<ul class=menuadmin>
+    <li><a style="text-decoration: none" href="index.php?action=managerproduct&query=insert">Manager product category</a></li>
+    <li><a style="text-decoration: none" href="index.php?action=managerproductcategory&query=insert">Manager Product</a></li>
+    <li><a style="text-decoration: none" href="index.php?action=managerpost">Manager post</a></li>
+    <li><a style="text-decoration: none" href="index.php?action=managerpostcategory">Manager post category</a></li>
+    <li><a style="text-decoration: none" href="../index.php">Home Page</a></li>
+    <li><a style="text-decoration: none" href="index.php?action=logout">logout:  
+
+
+    <?php 
+    session_start();
+    if(isset($_SESSION['dangnhap'])){
+        echo $_SESSION['dangnhap'];
+    }
+    ?>
+    </a></li>
+    
 
 </ul>
+<div class="clear"></div>
