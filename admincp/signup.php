@@ -8,7 +8,7 @@
         $email=$_POST['email'];
         $phone=$_POST['phone'];
         if($pass_word==$re_pass_word){
-            $sql_signup ="INSERT INTO tbl_user(username, password, email, phone, adress,id_user ) VALUE('".$user_name."','".$pass_word."','".$email."','".$phone."','".$adress."','1')";
+            $sql_signup ="INSERT INTO tbl_user(username, password, email, phone, adress ) VALUE('".$user_name."','".$pass_word."','".$email."','".$phone."','".$adress."')";
             $row=pg_query($db,$sql_signup);
             header("location:../login.php");
         }else{
