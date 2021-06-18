@@ -103,13 +103,13 @@ ul.product_list li {
     float: left;
     text-align: center;
     border: 2px solid rgb(158, 174, 190);
-    width: 19%;
-    margin-left: 4%;
-    height: 421px;
-    margin-bottom: 46px;
+    width: 25%;
+    margin-left: -1px;
+    height: 468px;
+    margin-bottom: -1px;
 }
 ul.product_list li:hover{
-    border: 2px solid rgb(71, 101, 136);
+    border: 2px inset rgb(71, 101, 136);
 
 }
 ul.product_list li img {
@@ -173,4 +173,15 @@ span#spanlogo {
 ul.product_list li img {
     width: 90%;
     margin-top: 20px;
+}
+input[type="submit"] {
+    width: 35%;
+    height: 26px;
+    margin-bottom: 7px;
+    /* bottom: 10px; */
+}
+
+input[type="submit"]:hover {
+    background-color: rgb(79,154,234);
+    color: white;
 }
